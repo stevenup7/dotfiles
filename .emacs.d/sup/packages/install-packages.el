@@ -1,5 +1,10 @@
 ;; Install all the things I want
 
+(require 'package)
+(add-to-list 'package-archives
+             '("melpa" . "http://melpa.milkbox.net/packages/") t)
+(package-initialize)
+
 (defvar suppackages
   '(;; javascript
     js2-mode
@@ -7,6 +12,7 @@
 
     ;; typescript
     typescript-mode
+    tss
 
     ;; json
     json-mode
@@ -35,12 +41,12 @@
 
     ))
 
-
 (defun sup/install-packages ()
   "loops over packages and installs them"
   (interactive)
   (dolist (pkg suppackages)
     (when (not (package-installed-p pkg))
+      (print pkg)
       (package-install pkg))))
 
 (sup/install-packages)
