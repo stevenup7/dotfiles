@@ -1,0 +1,14 @@
+[user]
+  name = Steven Upritchard
+  email = steven@upritchard.co
+[core]
+  editor = emacs
+[alias]
+  br = branch
+  ci = commit
+  cim = commit -m
+  co = checkout
+  newbranch = checkout -b
+  st = status
+[push]
+  default = current
