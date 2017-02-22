@@ -34,16 +34,27 @@
   "grab the current line and strip the EOL"
   (replace-regexp-in-string "[\r\n]" "" (thing-at-point 'line t)))
 
-(defun switch-quotes (str)
-  (replace-regexp-in-string "supSafeStringSUP" "'" (replace-regexp-in-string "'" "\"" (replace-regexp-in-string "[\"]" "supSafeStringSUP" str))))
 
 (defun switch-quotes-on-current-line ()
+  "swaps single and double quotes on the current line"
   (interactive)
-  (save-excursion
-    (set 'fixed-line (switch-quotes (get-curr-line)))
+  (let* (
+        (line (get-curr-line))
+        (safestring "__supsafestring__")
+        (fixed-line (replace-regexp-in-string safestring "\"" (replace-regexp-in-string "\"" "'" (replace-regexp-in-string "'" safestring line))))
+        )
     (move-beginning-of-line nil)
     (kill-line nil)
-    (insert fixed-line)))
+    (insert fixed-line)
+    ))
+
+(defun remove-js-debug ()
+  "removes console and debuggers from current file"
+  (interactive)
+  (flush-lines "^[[:space:][:blank:]]*console\.")
+  (flush-lines "^[[:space:][:blank:]]*debugger")
+  )
+
 
 (defun comment-or-uncomment-region-or-line ()
   "Comments or uncomments the region or the current line if there's no active region."

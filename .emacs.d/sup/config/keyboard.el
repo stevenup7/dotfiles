@@ -1,7 +1,6 @@
+(define-key global-map (kbd "C-c SPC") 'ace-jump-mode)
 
-(global-set-key (kbd "M-\\") 'comment-or-uncomment-region-or-line) 
+(global-set-key (kbd "M-?") 'comment-or-uncomment-region-or-line)
 (global-set-key (kbd "M-i") 'indent-whole-buffer)
 
-;; todo not working :(
-(global-set-key (kbd "M-=") 'er/expand-region)
-
+(global-set-key (kbd "M-2") 'er/expand-region)

@@ -31,7 +31,6 @@
     smartparens
     load-dir
     expand-region
-    ace-jump-mode
 
     ;; ido
     ido-vertical-mode
@@ -45,10 +44,9 @@
 (defun sup/install-packages ()
   "loops over packages and installs them"
   (interactive)
-  (package-refresh-contents)
   (dolist (pkg suppackages)
     (when (not (package-installed-p pkg))
       (print pkg)
       (package-install pkg))))
 
-;; (sup/install-packages)
+(sup/install-packages)
