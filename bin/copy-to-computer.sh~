@@ -1,4 +1,0 @@
-cp ~/dotfiles/.bashrc ~
-cp ~/dotfiles/.emacs ~
-cp -r ~/dotfiles/.emacs ~
-cp ~/dotfiles/.tmux.conf ~

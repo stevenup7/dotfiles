@@ -1,0 +1,58 @@
+#!/bin/bash
+
+# check command line options
+if [ "$1" == "computer" ]; then
+    DIR="COMPUTER"
+else
+    if [ "$1" == "git" ]; then
+        DIR="GIT"
+    else
+        echo "USAGE"
+        echo " you must supply a direction either computer or git"
+        exit 1;
+    fi
+fi
+
+echo "Direction is /$DIR/"
+
+GITFOLDER=`realpath ~/dotfiles`
+
+# list of file
+declare -a FILELIST=(
+    ".bashrc"
+    ".gitconfig"
+    ".emacs"
+    ".tmux.conf"
+)
+
+# list of folders
+declare -a FOLDERLIST=(
+    ".emacs.d"
+)
+
+
+#copy the folders in the right direction
+if [ -d "$GITFOLDER" ]; then
+
+    # all the files
+    for FILENAME in "${FILELIST[@]}"
+    do
+        if [ "$DIR" == "GIT" ]; then
+            echo "cp ~/$FILENAME $GITFOLDER/$FILENAME"
+        else
+            echo "cp $GITFOLDER/$FILENAME ~/$FILENAME"
+        fi
+    done
+
+    # copy the folders -r recursivly
+    for FOLDERNAME in "${FOLDERLIST[@]}"
+    do
+        if [ "$DIR" == "GIT" ]; then
+            echo "cp -r ~/$FOLDERNAME $GITFOLDER/$FOLDERNAME"
+        else
+            echo "cp -r $GITFOLDER/$FOLDERNAME ~/$FOLDERNAME"
+        fi
+    done
+else
+    echo "DOTFILES folder not in home folder expecting to copy from $GITFOLDER"
+fi
