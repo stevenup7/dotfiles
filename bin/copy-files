@@ -1,5 +1,12 @@
 #!/bin/bash
 
+OS="UNKNOWN"
+
+if [[ "$OSTYPE" == "linux-gnu" ]]; then
+    OS="LINUX"
+elif [[ "$OSTYPE" == "darwin"* ]]; then
+    OS="OSX"
+fi
 # check command line options
 if [ "$1" == "computer" ]; then
     DIR="COMPUTER"
@@ -24,6 +31,10 @@ declare -a FILELIST=(
     ".emacs"
     ".tmux.conf"
 )
+
+# karabiner files
+KARABINER_SRC="steven.karabiner.json"
+KARABINER_DEST="~/.config/karabiner/assets/complex_modifications/steven.karabiner.json"
 
 # list of folders
 declare -a FOLDERLIST=(
@@ -53,6 +64,13 @@ if [ -d "$GITFOLDER" ]; then
             echo "cp -r $GITFOLDER/$FOLDERNAME ~/$FOLDERNAME"
         fi
     done
+
+    if [ "$DIR" == "COMPUTER" ]; then
+        if [ "$OS" == "OSX" ] ; then
+            cp "$GITFOLDER/$KARABINER_SRC $KARABINER_DEST"
+        fi
+    fi
+
 else
     echo "DOTFILES folder not in home folder expecting to copy from $GITFOLDER"
 fi
