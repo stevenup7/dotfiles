@@ -1,8 +1,0 @@
-
-# some more ls aliases
-alias em="emacs -nw"
-alias pbcopy="xsel --clipboard"
-alias va=". ./venv/bin/activate"
-alias vn="python3 -m venv ./venv"
-alias vd="deactivate"
-alias pylintall="find *.py ! -name \"flycheck*\" | xargs pylint"
