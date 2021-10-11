@@ -1,0 +1,4 @@
+# -*- mode: snippet -*-
+#name : link
+# --
+[$1]($2)

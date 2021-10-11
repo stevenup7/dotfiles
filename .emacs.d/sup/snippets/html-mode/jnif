@@ -1,0 +1,6 @@
+#name : jnif
+#group : jinga
+# --
+{% if $1 %}
+$0
+{% endif %}

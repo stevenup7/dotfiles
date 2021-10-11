@@ -1,0 +1,4 @@
+#name : ukicon
+#group : uikit
+# --
+<span uk-icon="icon: $1"></span>$0

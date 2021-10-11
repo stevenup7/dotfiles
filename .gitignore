@@ -3,3 +3,6 @@ auto-save-list
 elpa
 ido.last
 smex-items
+*.*#
+*.*~
+\#*#

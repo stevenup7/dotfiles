@@ -1,0 +1,4 @@
+# -*- mode: snippet -*-
+#name : pr
+# --
+print($0);

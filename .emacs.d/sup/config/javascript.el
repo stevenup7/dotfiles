@@ -9,15 +9,15 @@
 
 
 
-;; ;; Tern from https://truongtx.me/2014/04/20/emacs-javascript-completion-and-refactoring/
-;; ;; tern for code validation and autocomplete
+;; Tern from https://truongtx.me/2014/04/20/emacs-javascript-completion-and-refactoring/
+;; tern for code validation and autocomplete
 ;; (add-hook 'js-mode-hook (lambda () (tern-mode t)))
 ;; (eval-after-load 'tern
 ;;   '(progn
 ;;      (require 'tern-auto-complete)
 ;;      (tern-ac-setup)))
 
-;; ;; use this to restart tern
-;; (defun delete-tern-process ()
-;;   (interactive)
-;;   (delete-process "Tern"))
+;; use this to restart tern
+(defun delete-tern-process ()
+  (interactive)
+  (delete-process "Tern"))

@@ -1,8 +1,9 @@
 ;; Install all the things I want
 
 (require 'package)
-(add-to-list 'package-archives
-             '("melpa" . "http://melpa.milkbox.net/packages/") t)
+
+(add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
+
 (package-initialize)
 
 (defvar suppackages
@@ -19,6 +20,9 @@
 
     ;; html
     emmet-mode
+
+    ;; python
+    python-black
 
     ;; editing
     markdown-mode

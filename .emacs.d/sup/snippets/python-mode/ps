@@ -1,0 +1,4 @@
+# -*- mode: snippet -*-
+# name : ps
+# --
+print("$0")

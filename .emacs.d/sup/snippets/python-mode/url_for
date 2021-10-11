@@ -1,0 +1,5 @@
+#name : url_for
+#group : flask
+#key : uf
+# --
+url_for("$1.$2")

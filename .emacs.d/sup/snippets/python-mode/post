@@ -1,0 +1,5 @@
+#name : post
+#group : flask
+#key : pt
+# --
+methods=["POST"]

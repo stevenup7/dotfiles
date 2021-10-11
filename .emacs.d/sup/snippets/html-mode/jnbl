@@ -1,0 +1,6 @@
+#name : jnbl
+#group : jinga
+# --
+{% block content %}
+$0
+{% endblock %}

@@ -1,4 +1,9 @@
-(print "configuring ido and flx ido")
+
+(setq ido-enable-flex-matching t)
+(setq ido-everywhere t)
+
+
+;; (print "configuring ido and flx ido")
 
 (require 'flx-ido)
 (require 'ido-hacks nil t)

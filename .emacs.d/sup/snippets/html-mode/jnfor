@@ -1,0 +1,6 @@
+#name : jnfor
+#group : jinga
+# --
+{% for $1 %}
+$0
+{% endfor %}

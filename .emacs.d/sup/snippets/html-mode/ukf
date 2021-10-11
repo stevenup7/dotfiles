@@ -1,0 +1,6 @@
+#name : ukf
+#group : uikit
+# --
+<form class="uk-form uk-form-stacked" action="$1">
+$0
+</form>

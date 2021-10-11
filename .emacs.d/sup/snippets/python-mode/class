@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+#name : class
+# --
+class $1():
+    def __init__(self):
+        $0

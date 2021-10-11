@@ -1,0 +1,6 @@
+#name : route
+#group : flask
+# --
+@`(file-name-nondirectory (file-name-sans-extension (buffer-file-name)))`.route("/$1")
+def $2():
+    $0
