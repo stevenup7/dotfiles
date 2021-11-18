@@ -33,7 +33,7 @@
  '(org-agenda-files (quote ("~/org/index.org")))
  '(package-selected-packages
    (quote
-    (jedi flycheck dap-mode flymake-json solarized-theme moe-theme pyimport anaconda-mode python-black js2-mode))))
+    (vue-mode web-mode jinja2-mode jedi flycheck dap-mode flymake-json solarized-theme moe-theme pyimport anaconda-mode python-black js2-mode))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

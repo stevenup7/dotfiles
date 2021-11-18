@@ -1,0 +1,4 @@
+# -*- mode: snippet -*-
+#name : prf
+# --
+print(f"{$0}");
